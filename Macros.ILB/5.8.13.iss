@@ -1,18 +1,18 @@
 Sub Main  
     IgnoreWarning(true)
 
-    Call nuevoCampo("Ejemplo-Detalle de ventas.IMD", "@If(TOTAL <> TOTAL_REAL, ""No Cuadra"", ""Cuadra"")", "NO Cuadra")
+    Call nuevoCampo("Ejemplo-Detalle de ventas.IMD", "TOTAL_REAL - TOTAL", "Diferencia")
 
     Client.RefreshFileExplorer
 End Sub
 
-Function nuevoCampo (byval inputName, eqn, outputName) 
+Function nuevoCampo (ByVal inputName, eqn, outputName) 
     Set db = Client.OpenDatabase(inputName)
     Set task = db.TableManagement
     Set field = db.TableDef.NewField
     field.Name = outputName
     field.Description = ""
-    field.Type = WI_CHAR_FIELD
+    field.Type = WI_NUM_FIELD
     field.Equation = eqn
     field.Decimals = 2
     task.AppendField field
@@ -21,6 +21,5 @@ Function nuevoCampo (byval inputName, eqn, outputName)
     Set db = Nothing
     Set field = Nothing
 End Function
-
 
 

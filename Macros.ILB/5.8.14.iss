@@ -1,7 +1,7 @@
 Sub Main  
     IgnoreWarning(true)
 
-    Call directo("Ejemplo-Detalle de ventas.IMD", "(COD_PROD == ""02"" .OR. COD_PROD == ""06"") .AND. TOTAL > 100000", "5.5.8.IMD")
+    Call directo("Ejemplo-Detalle de ventas.IMD", "Diferencia <> 0", "5.8.14.IMD")
     
     Client.RefreshFileExplorer
 End Sub
