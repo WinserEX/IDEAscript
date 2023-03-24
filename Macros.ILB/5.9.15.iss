@@ -1,7 +1,7 @@
 Sub Main  
     IgnoreWarning(true)
 
-    Call directo("Ejemplo-Detalle de ventas.IMD", "Diferencia <> 0", "5.8.14.IMD")
+    Call directo("Ejemplo-Detalle de ventas.IMD", "FECHA_FACT  <  " & Chr(34) & "20230527" & Chr(34) & "", "5.5.8.IMD")
     
     Client.RefreshFileExplorer
 End Sub
@@ -18,3 +18,4 @@ Function directo (byval inputName, eqn, outputName)
     Set db = Nothing
     Client.OpenDatabase (dbName)
 End Function
+

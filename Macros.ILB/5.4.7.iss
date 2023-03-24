@@ -4,7 +4,7 @@ Sub Main
     Set task = db.Extraction
     task.IncludeAllFields
     dbName = "5.2.7.IMD"
-    task.AddExtraction dbName, "", "COD_PROD == ""01"" .AND. COD_PROD == ""02"""
+    task.AddExtraction dbName, "", "COD_PROD == ""01"" .OR. COD_PROD == ""02"""
     task.CreateVirtualDatabase = False
     task.PerformTask 1, db.Count
     Set task = Nothing
