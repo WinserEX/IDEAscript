@@ -1,6 +1,10 @@
 
 Sub Main  
     IgnoreWarning(true)
+    ''FECHA_FACT  <  " & Chr(34) & "20230527" & Chr(34) & "
+    Call directo("EKKO.IMD", "@Isin(BSART, " & Chr(34) & "ZPT" & Chr(34) & ") <> 0 .AND. BEDAT >= " & Chr(34) & "20220701" & Chr(34) & "", "ekkoFiltro.IMD")
+    Call directo("EKPO.IMD", " ", "ekpoFiltro.IMD")
+
     'EKKO + EKPO
         Set db = Client.OpenDatabase("EKKO.IMD")
         Set task = db.JoinDatabase
@@ -21,7 +25,7 @@ Sub Main
         task.AddMatchKey "EBELN", "EBELN", "A"
         task.CreateVirtualDatabase = False
         dbName = "EKKO + EKPO.IMD"
-            task.PerformTask dbName, "", WI_JOIN_MATCH_ONLY
+        task.PerformTask dbName, "", WI_JOIN_MATCH_ONLY
         Set task = Nothing
         Set db = Nothing
 
@@ -42,4 +46,15 @@ Sub Main
     Client.OpenDatabase (dbName)
 End Sub
 
-
+Function directo (byval inputName, eqn, outputName) 
+    Set db = Client.OpenDatabase(inputName)
+    Set task = db.Extraction
+    task.IncludeAllFields
+    dbName = outputName
+    task.AddExtraction dbName, "", eqn
+    task.CreateVirtualDatabase = False
+    task.PerformTask 1, db.Count
+    Set task = Nothing
+    Set db = Nothing
+    Client.OpenDatabase (dbName)
+End Function
