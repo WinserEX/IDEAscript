@@ -1,0 +1,11 @@
+No. Orden(EBELN),Fecha(BEDAT),Sociedad(BUKRS),Moneda(WAERS),Proveedor(LIFNR),Nombre Provedor(NAME1),Material(MATNR),Desc. Material(TXZ01),Un. Medida Pedido(MEINS),Precio Neto(NETPR),Valor Neto(NETWR),Valor Bruto(BRTWR)
+1000001,3/27/2022,test1,Peso,Electro Muebles,Raymond Castillo,N/A,N/A,Lbs.,50000,50000,41000
+1000002,3/28/2022,test2,Peso,Bebidas Luis,Luis Reyes,N/A,N/A,Lbs.,60000,60000,49200
+1000003,3/29/2022,test3,Peso,Electro Muebles,Raymond Castillo,N/A,N/A,Lbs.,150000,150000,123000
+1000004,3/30/2022,test4,Peso,Electro Muebles,Raymond Castillo,N/A,N/A,Lbs.,20000,20000,16400
+1000005,3/31/2022,test5,Peso,Electro Muebles,Raymond Castillo,N/A,N/A,Lbs.,300000,300000,246000
+1000006,4/1/2022,test6,Peso,Electro Muebles,Raymond Castillo,N/A,N/A,Lbs.,50000,50000,41000
+1000007,4/2/2022,test7,Peso,A&B Comercial,Ramon Pozo,N/A,N/A,Lbs.,100000,100000,82000
+1000008,4/3/2022,test8,Peso,A&B Comercial,Ramon Pozo,N/A,N/A,Lbs.,1500000,1500000,1230000
+1000009,4/4/2022,test9,Peso,A&B Comercial,Ramon Pozo,N/A,N/A,Lbs.,50000,50000,41000
+1000010,4/5/2022,test10,Peso,A&B Comercial,Ramon Pozo,N/A,N/A,Lbs.,30000,30000,24600
