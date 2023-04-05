@@ -1,0 +1,9 @@
+dbName = "Test.IMD"
+
+    
+select cpo.ebeln, cpo.bedat, cpo.bukrs, cpo.waers, cpo.lifnr, cpo.lifnr, mpr.name1, dpo.matnr, dpo.txz01, dpo.menge, dpo.meins, dpo.netpr, dpo.netwr, dpo.brtwr, cpo.bsart 
+from SAPABAP1.ekko as cpo, SAPABAP1.ekpo as dpo, SAPABAP1.lfa1 as mpr 
+where cpo.ebeln = dpo.ebeln and cpo.lifnr = mpr.lifnr 
+and cpo.bsart not like 'ZPT%' and dpo.loekz = '' and dpo.matnr <> '' and cpo.bedat >= '20220701' 
+
+

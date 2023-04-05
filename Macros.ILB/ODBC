@@ -1,0 +1,13 @@
+Sub Main
+    IgnoreWarning(true)
+
+    Call odbc("cuentas")
+
+    Client.RefreshFileExplorer
+End Sub
+
+Function odbc(query)
+    dbName = "dbo" & Chr(34) & "." & Chr(34) & query & Chr(34) & ".db"
+    Client.ImportODBCFile "" & Chr(34) & "dbo" & Chr(34) & "." & Chr(34) & query & Chr(34) & "", dbName, FALSE, ";DSN=NP_BNC;Description=Nextpoint Banca;UID=;Trusted_Connection=Yes;APP=IDEA;WSID=DESKTOP-I1U9ME7;DATABASE=NP_BNC", ""
+    Client.OpenDatabase (dbName)
+End Function
